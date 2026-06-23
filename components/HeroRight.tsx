@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function HeroRight() {
   return (
     <div className="relative flex items-center justify-center w-full h-full bg-cream overflow-hidden min-h-[500px]">
@@ -13,14 +15,15 @@ export default function HeroRight() {
       {/* Model photo */}
       <div className="relative z-10 w-64 h-[480px] lg:w-72 lg:h-[520px] rounded-[2.5rem] overflow-hidden shadow-2xl">
         {/*
-          Replace the src below with the actual model/makeup photo.
-          Suggested path: /images/hero-model.jpg
-          Dimensions: at least 400x600px, portrait orientation.
+          Placeholder photo — swap src with the real model/makeup photo before launch.
+          Suggested local path: /images/hero-model.jpg (portrait, min 400×600px)
         */}
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80"
           alt="Beauty consultation — personalized guidance"
-          className="w-full h-full object-cover object-top"
+          fill
+          className="object-cover object-top"
+          priority
         />
       </div>
     </div>

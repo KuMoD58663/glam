@@ -11,7 +11,7 @@ describe('Navbar', () => {
   it('renders all six nav links', () => {
     render(<Navbar />)
     ;['Home', 'About Us', 'Services', 'Guides', 'Beauty Resources', 'Contact Us'].forEach(
-      (link) => expect(screen.getByText(link)).toBeInTheDocument()
+      (label) => expect(screen.getByRole('link', { name: label })).toBeInTheDocument()
     )
   })
 

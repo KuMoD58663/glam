@@ -6,7 +6,7 @@
 
 **Architecture:** Single Next.js 14 App Router page with five focused React components — Navbar, HeroLeft, HeroRight, FeatureStrip, and a Hero shell that composes them. Tailwind config is extended with four brand color tokens. No state management — fully static and presentational.
 
-**Tech Stack:** Next.js 14 (App Router), TypeScript, Tailwind CSS 3, Open Sans via `next/font/google`, Jest + React Testing Library
+**Tech Stack:** Next.js 16 (App Router), TypeScript, Tailwind CSS 4 (tokens via `@theme {}` in globals.css — tailwind.config.ts is documentation only), Open Sans via `next/font/google`, Jest + React Testing Library
 
 ## Global Constraints
 

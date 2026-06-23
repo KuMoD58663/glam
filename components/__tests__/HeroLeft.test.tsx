@@ -14,6 +14,7 @@ describe('HeroLeft', () => {
     const el = screen.getByText('Perfectly')
     expect(el).toHaveClass('text-mint')
     expect(el).toHaveClass('italic')
+    expect(el).toHaveClass('font-bold')
   })
 
   it('renders the subheadline', () => {

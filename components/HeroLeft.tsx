@@ -12,7 +12,7 @@ export default function HeroLeft() {
       <h1 className="text-cream font-bold leading-tight text-5xl lg:text-6xl xl:text-7xl mb-5">
         Your Beauty,
         <br />
-        <span className="text-mint italic">Perfectly</span>{' '}
+        <span className="text-mint italic font-bold">Perfectly</span>{' '}
         <span className="text-cream">Guided</span>
       </h1>
 

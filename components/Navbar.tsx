@@ -1,6 +1,14 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
-const NAV_LINKS = ['Home', 'About Us', 'Services', 'Guides', 'Beauty Resources', 'Contact Us']
+const NAV_LINKS = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Guides', href: '/guides' },
+  { label: 'Beauty Resources', href: '/beauty-resources' },
+  { label: 'Contact Us', href: '/contact' },
+]
 
 export default function Navbar() {
   return (
@@ -15,11 +23,11 @@ export default function Navbar() {
       />
 
       <ul className="hidden lg:flex items-center gap-7">
-        {NAV_LINKS.map((link) => (
-          <li key={link}>
-            <a href="#" className="text-cream/75 hover:text-cream text-sm transition-colors">
-              {link}
-            </a>
+        {NAV_LINKS.map(({ label, href }) => (
+          <li key={label}>
+            <Link href={href} className="text-cream/75 hover:text-cream text-sm transition-colors">
+              {label}
+            </Link>
           </li>
         ))}
       </ul>
