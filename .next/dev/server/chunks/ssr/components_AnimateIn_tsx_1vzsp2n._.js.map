@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///F:/glam/components/AnimateIn.tsx"],"sourcesContent":["'use client'\nimport { motion, useReducedMotion } from 'motion/react'\nimport type { ReactNode } from 'react'\n\nexport default function AnimateIn({\n  children,\n  delay = 0,\n  className,\n}: {\n  children: ReactNode\n  delay?: number\n  className?: string\n}) {\n  const reduce = useReducedMotion()\n  return (\n    <motion.div\n      className={className}\n      initial={reduce ? false : { opacity: 0, y: 24 }}\n      whileInView={{ opacity: 1, y: 0 }}\n      viewport={{ once: true, amount: 0.15 }}\n      transition={{ duration: 0.55, delay, ease: [0.16, 1, 0.3, 1] }}\n    >\n      {children}\n    </motion.div>\n  )\n}\n"],"names":["AnimateIn","children","delay","className","reduce","div","initial","opacity","y","whileInView","viewport","once","amount","transition","duration","ease"],"mappings":";;;;;AACA;AAAA;AADA;;;AAIe,SAASA,UAAU,EAChCC,QAAQ,EACRC,QAAQ,CAAC,EACTC,SAAS,EAKV;IACC,MAAMC,SAAS,IAAA,6NAAgB;IAC/B,qBACE,8OAAC,wKAAM,CAACC,GAAG;QACTF,WAAWA;QACXG,SAASF,SAAS,QAAQ;YAAEG,SAAS;YAAGC,GAAG;QAAG;QAC9CC,aAAa;YAAEF,SAAS;YAAGC,GAAG;QAAE;QAChCE,UAAU;YAAEC,MAAM;YAAMC,QAAQ;QAAK;QACrCC,YAAY;YAAEC,UAAU;YAAMZ;YAAOa,MAAM;gBAAC;gBAAM;gBAAG;gBAAK;aAAE;QAAC;kBAE5Dd;;;;;;AAGP"}}]
+}

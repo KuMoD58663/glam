@@ -5,5 +5,13 @@
   --color-teal: #428475;
   --color-mint: #89D7B7;
   --color-cream: #FFF4E1;
+
+  --color-glamgreen: #007237;
+  --color-glamgreen-dark: #0a5a30;
+  --color-glamtext: #1c2a22;
+  --color-glamtext-muted: #5b6b60;
+
   --font-sans: var(--font-open-sans), sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-ui: var(--font-dm-sans), system-ui, sans-serif;
 }
