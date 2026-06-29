@@ -6,7 +6,7 @@ const REVIEWS = [
     id: 1,
     username: 'Shauvikrana1',
     location: 'Chamba, Himachal Pradesh',
-    avatar: 'https://www.figma.com/api/mcp/asset/ae89bbfc-68f3-4475-b6b1-ffd1653b05f1',
+    avatar: '/images/figma/figma-img-01.png',
     hairTypes: [
       { label: 'straight', bg: '#fbe4ea', border: '#c06b84', text: '#8b2f52' },
       { label: 'oily', bg: '#fdf5e6', border: '#d4a24c', text: '#8a5b00' },
@@ -21,7 +21,7 @@ const REVIEWS = [
     id: 2,
     username: 'Meet',
     location: 'Arvalli, Gujarat',
-    avatar: 'https://www.figma.com/api/mcp/asset/92bbd6da-7112-46ec-af5d-28db6c7fc44e',
+    avatar: '/images/figma/figma-img-04.png',
     hairTypes: [
       { label: 'straight', bg: '#fbe4ea', border: '#c06b84', text: '#8b2f52' },
       { label: 'dry', bg: '#fdf5e6', border: '#d4a24c', text: '#8a5b00' },
@@ -97,12 +97,12 @@ function ReviewEntry({ review, isLast }: { review: (typeof REVIEWS)[number]; isL
 
 export default function WhySection() {
   return (
-    <section className="w-full py-16 bg-white">
-      <div className="max-w-[1440px] mx-auto px-20">
-        <div className="flex items-start gap-20">
+    <section className="w-full py-10 lg:py-16 bg-white">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-20">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-20">
 
           {/* Left: Why GlamGuider copy */}
-          <AnimateIn className="w-[500px] shrink-0">
+          <AnimateIn className="w-full lg:w-[500px] lg:shrink-0">
             <div className="flex flex-col gap-5">
               <p
                 className="text-[12px] font-bold uppercase tracking-[3px] text-[#0a5a30]"
@@ -113,13 +113,13 @@ export default function WhySection() {
 
               <div className="flex flex-col gap-2 pb-1">
                 <h1
-                  className="text-[52px] font-semibold leading-[1.14] text-[#1c2a22]"
+                  className="text-[34px] sm:text-[42px] lg:text-[52px] font-semibold leading-[1.14] text-[#1c2a22]"
                   style={{ fontFamily: 'var(--font-playfair)' }}
                 >
                   Your Trusted Guide<br />to Beauty
                 </h1>
                 <p
-                  className="text-[24px] italic text-[#0a5a30] tracking-[0.5px] leading-[1.5] pb-1"
+                  className="text-[17px] lg:text-[24px] italic text-[#0a5a30] tracking-[0.5px] leading-[1.5] pb-1"
                   style={{ fontFamily: 'var(--font-playfair)' }}
                 >
                   Reviews &middot; Ingredients &middot; Self-Care
@@ -133,7 +133,7 @@ export default function WhySection() {
                 Real user reviews, ingredient breakdowns and simple guides - so you always know what&apos;s worth it before you buy.
               </p>
 
-              <div className="flex items-center gap-8 pt-1">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 pt-1">
                 <Button href="/reviews" arrow>
                   Browse Reviews
                 </Button>
@@ -157,8 +157,8 @@ export default function WhySection() {
             </div>
           </AnimateIn>
 
-          {/* Vertical divider */}
-          <div className="self-stretch w-px bg-[#c9a98a]/50 my-2 shrink-0" />
+          {/* Vertical divider — desktop only */}
+          <div className="hidden lg:block self-stretch w-px bg-[#c9a98a]/50 my-2 shrink-0" />
 
           {/* Right: Recent Reviews */}
           <AnimateIn delay={0.15} className="flex-1 flex flex-col gap-5">

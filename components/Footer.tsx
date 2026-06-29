@@ -26,10 +26,10 @@ const LINKS = {
 export default function Footer() {
   return (
     <footer className="bg-[#1c2a22] text-white">
-      <div className="max-w-[1440px] mx-auto px-20 py-14">
-        <div className="grid grid-cols-4 gap-12">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-20 py-10 lg:py-14">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 col-span-2 lg:col-span-1">
             <Image
               src="/images/glamguider-logo.png"
               alt="GlamGuider"
@@ -65,7 +65,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 flex items-center justify-between">
+        <div className="mt-8 lg:mt-12 pt-5 lg:pt-6 border-t border-white/10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[12px] text-white/40" style={{ fontFamily: 'var(--font-dm-sans)' }}>
             &copy; 2026 GlamGuider. All rights reserved.
           </p>

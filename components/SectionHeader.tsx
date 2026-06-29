@@ -17,7 +17,7 @@ export default function SectionHeader({
 }) {
   return (
     <AnimateIn>
-      <div className="flex items-end justify-between gap-6 mb-10">
+      <div className="flex items-end justify-between gap-6 mb-6 lg:mb-10">
         <div className="flex flex-col gap-1.5">
           <h2
             className="text-[34px] md:text-[40px] font-bold text-[#007237] leading-none"

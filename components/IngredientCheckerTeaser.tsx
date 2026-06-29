@@ -12,14 +12,14 @@ const RATINGS = [
 export default function IngredientCheckerTeaser() {
   return (
     <section className="w-full bg-[#0f3d25] overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-20 py-20">
-        <div className="grid gap-20" style={{ gridTemplateColumns: '1fr 1.1fr' }}>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-20 py-10 lg:py-20">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
 
           {/* Left: editorial copy */}
           <AnimateIn className="flex flex-col justify-center gap-7">
             <div className="flex flex-col gap-4">
               <h2
-                className="text-[52px] font-semibold leading-[1.1] text-white"
+                className="text-[30px] sm:text-[38px] lg:text-[52px] font-semibold leading-[1.1] text-white"
                 style={{ fontFamily: 'var(--font-playfair)' }}
               >
                 What&apos;s really<br />in your products?

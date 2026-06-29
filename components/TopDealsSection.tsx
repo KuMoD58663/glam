@@ -8,7 +8,7 @@ const DEALS = [
     id: 1,
     brand: 'Minimalist',
     product: 'Hair Shampoo',
-    image: 'https://www.figma.com/api/mcp/asset/32af57a3-d423-47c7-a550-4c6d6b6dfae2',
+    image: '/images/figma/figma-img-19.jpg',
     mrp: 729,
     price: 450,
     discount: 38,
@@ -18,7 +18,7 @@ const DEALS = [
     id: 2,
     brand: 'Tuco Kids',
     product: 'Sun Lotion',
-    image: 'https://www.figma.com/api/mcp/asset/8ba2dc20-321f-4aef-9714-3f3bd4313849',
+    image: '/images/figma/figma-img-18.jpg',
     mrp: 1071,
     price: 450,
     discount: 58,
@@ -28,7 +28,7 @@ const DEALS = [
     id: 3,
     brand: 'Naturali',
     product: 'Conditioner',
-    image: 'https://www.figma.com/api/mcp/asset/bfe10fd5-e96f-4735-8d75-63c1eb382ddb',
+    image: '/images/figma/figma-img-13.jpg',
     mrp: 978,
     price: 450,
     discount: 54,
@@ -38,7 +38,7 @@ const DEALS = [
     id: 4,
     brand: 'Naturali',
     product: 'Shampoo',
-    image: 'https://www.figma.com/api/mcp/asset/19c3ef00-74ff-4715-b450-07318adf6e09',
+    image: '/images/figma/figma-img-03.jpg',
     mrp: 682,
     price: 450,
     discount: 34,
@@ -111,8 +111,8 @@ function DealCard({ deal, delay }: { deal: (typeof DEALS)[number]; delay: number
 
 export default function TopDealsSection() {
   return (
-    <section className="w-full py-16 bg-[#f0f8f3]">
-      <div className="max-w-[1440px] mx-auto px-8">
+    <section className="w-full py-10 lg:py-16 bg-[#f0f8f3]">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <SectionHeader
           title="Top Deals"
           subtitle="Editor-picked beauty buys at their lowest prices this week."
