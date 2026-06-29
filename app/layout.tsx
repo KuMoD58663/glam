@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Open_Sans, Playfair_Display, DM_Sans } from 'next/font/google'
 import './globals.css'
+import { AuthProvider } from '@/context/AuthContext'
+import { LoyaltyProvider } from '@/context/LoyaltyContext'
+import DevAuthToggle from '@/components/DevAuthToggle'
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -30,7 +33,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${openSans.variable} ${playfair.variable} ${dmSans.variable} font-sans antialiased bg-white`}>
-        {children}
+        <AuthProvider>
+          <LoyaltyProvider>
+            {children}
+            <DevAuthToggle />
+          </LoyaltyProvider>
+        </AuthProvider>
       </body>
     </html>
   )
