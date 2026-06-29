@@ -87,7 +87,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 -mr-1 text-[#1a1a1a] hover:text-[#007237] transition-colors active:scale-[0.9] transition-transform duration-150"
+            className="lg:hidden p-2 -mr-1 text-[#1a1a1a] hover:text-[#007237] transition-all active:scale-[0.9] duration-150"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
           >
@@ -138,7 +138,7 @@ export default function Navbar() {
                 />
               </Link>
               <button
-                className="p-2 -mr-1 text-[#1a1a1a] hover:text-[#007237] transition-colors active:scale-[0.9] transition-transform duration-150"
+                className="p-2 -mr-1 text-[#1a1a1a] hover:text-[#007237] transition-all active:scale-[0.9] duration-150"
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close menu"
               >
@@ -155,6 +155,9 @@ export default function Navbar() {
                   Search products, brands, ingredients...
                 </span>
               </div>
+
+              {/* Loyalty widget */}
+              <CoinWidget />
 
               {/* Sign In */}
               <Link

@@ -9,7 +9,7 @@ type CardState = 'earned' | 'auto' | 'checkin' | 'available'
 
 const EARN_CARDS: { label: string; pts: string; state: CardState }[] = [
   { label: 'Write a review', pts: '+10 pts', state: 'earned' },
-  { label: 'Daily check-in', pts: '+5 pts', state: 'checkin' },
+  { label: 'Daily check-in', pts: '+10 pts', state: 'checkin' },
   { label: 'Complete your profile', pts: '+20 pts', state: 'auto' },
   { label: 'Share a product', pts: '+15 pts', state: 'available' },
 ]
@@ -65,7 +65,7 @@ export default function EarnAsYouGlow() {
         {isLoggedIn && (
           <div className="mb-8">
             <p className="text-[13px] text-[#5b6b60] mb-2 font-[family-name:var(--font-dm-sans)]">
-              {ptsToNext} / {nextRewardAt} pts until your first reward
+              {ptsEarned} / {nextRewardAt} pts until your first reward
             </p>
             <div className="h-2 bg-[#f0dcb0] rounded-full overflow-hidden">
               <div

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { AuthProvider, AuthContext } from '@/context/AuthContext'
+import { AuthContext } from '@/context/AuthContext'
 import { LoyaltyProvider } from '@/context/LoyaltyContext'
 import CoinWidget from '../CoinWidget'
 

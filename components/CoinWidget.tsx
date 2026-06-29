@@ -8,13 +8,13 @@ import { useLoyalty } from '@/context/LoyaltyContext'
 function GlamCoin({ pulse }: { pulse?: boolean }) {
   return (
     <span className="relative inline-flex shrink-0">
-      <svg className="size-[22px]" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <svg className="size-[22px]" viewBox="0 0 24 24" fill="none" aria-hidden={true}>
         <circle cx="12" cy="12" r="10" fill="#fbbf24" />
         <circle cx="12" cy="12" r="8" fill="#f59e0b" />
         <text x="12" y="16" textAnchor="middle" fill="#78350f" fontSize="9" fontWeight="700" fontFamily="system-ui">G</text>
       </svg>
       {pulse && (
-        <span aria-hidden className="absolute -top-0.5 -right-0.5 size-2.5">
+        <span aria-hidden={true} className="absolute -top-0.5 -right-0.5 size-2.5">
           <span className="animate-ping absolute inline-flex size-full rounded-full bg-[#e0a020] opacity-75" />
           <span className="relative inline-flex size-2.5 rounded-full bg-[#e0a020]" />
         </span>
@@ -50,9 +50,15 @@ function LoggedInDropdown({
       </div>
 
       <div className="flex items-center justify-between bg-[#fff6e5] border border-[#f0dcb0] rounded-xl px-3 py-2.5 gap-3">
-        <span className="text-[14px] font-semibold text-[#1c2a22] font-[family-name:var(--font-dm-sans)] shrink-0">
-          🔥 Day {streak}
-        </span>
+        {streak === 0 ? (
+          <span className="text-[14px] font-semibold text-[#1c2a22] font-[family-name:var(--font-dm-sans)] shrink-0">
+            Start your streak today.
+          </span>
+        ) : (
+          <span className="text-[14px] font-semibold text-[#1c2a22] font-[family-name:var(--font-dm-sans)] shrink-0">
+            🔥 Day {streak}
+          </span>
+        )}
         {checkedInToday ? (
           <div className="text-right">
             <p className="text-[12px] text-[#007237] font-semibold font-[family-name:var(--font-dm-sans)]">
@@ -65,7 +71,6 @@ function LoggedInDropdown({
         ) : (
           <button
             onClick={checkIn}
-            aria-pressed={false}
             className="bg-[#007237] text-white text-[12px] font-semibold rounded-full px-3 py-1.5 hover:bg-[#005a2b] transition-colors font-[family-name:var(--font-dm-sans)] shrink-0"
           >
             Check in (+1)
@@ -75,7 +80,7 @@ function LoggedInDropdown({
 
       <div>
         <p className="text-[11px] text-[#5b6b60] mb-1.5 font-[family-name:var(--font-dm-sans)]">
-          {ptsToNext} / {nextRewardAt} pts until your first reward
+          {ptsEarned} / {nextRewardAt} pts until your first reward
         </p>
         <div className="h-1.5 bg-[#f0f0f2] rounded-full overflow-hidden">
           <div
@@ -129,7 +134,7 @@ export default function CoinWidget() {
     return () => document.removeEventListener('mousedown', onMouseDown)
   }, [])
 
-  const showPulse = isLoggedIn && !checkedInToday && streak > 0
+  const showPulse = isLoggedIn && !checkedInToday
 
   return (
     <div ref={ref} className="relative">
@@ -156,6 +161,7 @@ export default function CoinWidget() {
         <div
           role="dialog"
           aria-label="Rewards"
+          aria-modal={true}
           className="absolute right-0 top-[calc(100%+8px)] w-[300px] bg-white rounded-2xl border border-[#f0f0f2] shadow-[0_6px_24px_rgba(0,114,55,0.07)] p-4 z-50"
         >
           {isLoggedIn
